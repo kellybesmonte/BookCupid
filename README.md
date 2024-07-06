@@ -51,3 +51,55 @@ I will be creating my own database with MySQL.
 ### Mockups
 
 ![mockup of app](<public/assets/Images/Screenshot 2024-07-06 at 2.30.16 PM.png>)
+
+## Database
+![sample of data created](<src/assets/Images/Screenshot 2024-07-06 at 2.36.52 PM.png>)
+
+Above is a sample of the first database I have created. They conist of 60-70 books with the title, author, description, type (fiction or non-fcition), and tags (genres). This is the main database that all others will be based on.
+
+The second datase I will have to create is in relation to the second questionaire. It will be based off the user's chosen genre from the FIRST questionaire.
+
+The third database I may have to create is the book profiles. Though, I am hoping, I can just pull from the first database instead.
+
+
+### Auth
+
+No user login information planned for this project.
+
+## Endpoints 
+
+ Example body:
+
+{
+    "title": "book title",
+    "author": "autho name",
+    "description": "book description...",
+    "genre": "fiction"
+    "tags": ["genre1", "genre2"],
+    "link": "link to goodreads"
+
+  "link": "https://www.goodreads.com/book/show/123456..."
+}
+
+I will be using the GET and POST endpoints.
+Maybe PUT as well. 
+
+## Roadmap
+- research (completed)
+- mockup (completed)
+- create illustrations (in progress)
+- create overall database (complete)
+- create second database 
+- work on backend (GET, POST, PUT) 
+- backend testing
+- create pages (only structure)
+- implement questionaires
+- implement swipe feature
+- testing for frontend + backend
+- styling
+
+
+## Nice to Haves 
+- more questionaires (the more i have, however, the more complicated the relations between databases become and this might be beyond my scope)
+
+
