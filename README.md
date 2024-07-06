@@ -77,8 +77,6 @@ No user login information planned for this project.
     "genre": "fiction"
     "tags": ["genre1", "genre2"],
     "link": "link to goodreads"
-
-  "link": "https://www.goodreads.com/book/show/123456..."
 }
 
 I will be using the GET and POST endpoints.
