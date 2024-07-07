@@ -3,7 +3,7 @@
 
 ## Overview 
 
-Book Cupid is an interactive app that mimics the experience of popular dating apps such as Hinge, Bumble, and Tinder to find their next favourite book! The app will utilize simple questionnaires, React’s swipe feature, and quirky illustrations to create a personalized book recommendation. Book Cupid is not about judging a book by its cover but instead, encouraging others to step out of their comfort zone and discover new voices in the book world.
+Book Cupid is an interactive app that mimics the experience of early 2000s web flash games and current popular dating apps such as Hinge, Bumble, and Tinder to find their next favourite book! The app will utilize simple questionnaires, React’s swipe feature, and quirky illustrations to create a personalized book recommendation. Book Cupid is not about judging a book by its cover but instead, encouraging others to step out of their comfort zone and discover new voices in the book world.
 
 
 ### Problem
@@ -11,7 +11,7 @@ Book Cupid is an interactive app that mimics the experience of popular dating ap
 With the rise of social media and the popular hashtag, #booktok, reading has increasingly become many peoples’ favourite pastimes. However, certain books, stories, and authors take precedence on the internet. There is an opportunity in the book industry to better highlight authors and stories from marginalized communities. This is where Book Cupid comes in! Instead of offering book recommendations that are already trending on social media, this app will recommend books that highlight the BIPOC and/or 2SLGBTQIA+ experience that are often overlooked.
 
 ### User Profile
-The targeted demographic for Book Cupid are users who already participate in social media trends such as #booktok, which predominantly consist of millennial and Gen Z women. With this in mind, I made sure to incorporate colours, illustrations, and design aestehtics that appeal to this demographic. 
+The targeted demographic for Book Cupid are users who already participate in social media trends such as #booktok, which predominantly consist of millennial and Gen Z women. With this in mind, I made sure to incorporate colours, illustrations, and design aesthetics that appeal to this demographic. 
 
 ### Features
 
@@ -64,7 +64,7 @@ The third database I may have to create is the book profiles. Though, I am hopin
 
 ### Auth
 
-No user login information planned for this project.
+No user login information is planned for this project.
 
 ## Endpoints 
 
@@ -79,8 +79,7 @@ No user login information planned for this project.
     "link": "link to goodreads"
 }
 
-I will be using the GET and POST endpoints.
-Maybe PUT as well. 
+I will be using the GET endpoint.
 
 ## Roadmap
 - research (completed)
@@ -98,6 +97,7 @@ Maybe PUT as well.
 
 
 ## Nice to Haves 
-- more questionaires (the more i have, however, the more complicated the relations between databases become and this might be beyond my scope)
+- more questionnaires (the more i have, however, the more complicated the relations between databases become and this might be beyond my scope)
+- I would love to implement a login feature and have the book recommendations be saved into the user's profile. This will most likely a feature I work on after the bootcamp.
 
 
