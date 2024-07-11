@@ -1,15 +1,17 @@
 import './App.scss'
+import Landing from './pages/Landing/Landing';
+import { BrowserRouter as Router, Routes, Route,} from "react-router-dom";
 
 function App() {
 
 
   return (
     <>
-      <div>
-        <img className="logo" src="./assets/Logo/Logo.svg" />
-        <img className="logo2" src="./assets/Logo/BookCupid.svg" />
-      </div>
-        
+      <Router>
+        <Routes>
+          <Route path="/" element={<Landing />} />
+        </Routes>
+      </Router>
     </>
   )
 }
