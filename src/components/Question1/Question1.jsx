@@ -7,6 +7,13 @@ export const API_URL = import.meta.env.VITE_API_URL;
 
 function Question1() {
     const navigate = useNavigate();
+
+
+    const handleGenreSelection = (genres) => {
+        navigate(`/quotes/${genres}`);
+    };
+
+
     
 
     return (
@@ -17,7 +24,7 @@ function Question1() {
             <section className="imgsQuestion--cardsSection">
 
 
-                <div className="imgsQuestion--cardContainer" onClick={() => navigate("/ContemporaryQuotes")}>
+            <div className="imgsQuestion--cardContainer" onClick={() => handleGenreSelection("Contemporary,Feminism")}>
                     <p>Contemporary/ Feminism</p>
                 </div>
 
