@@ -1,7 +1,11 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import { useParams } from 'react-router-dom';
+// import SwiperCore, { Navigation } from 'swiper';
+import { Swiper, SwiperSlide } from 'swiper/react';
+import 'swiper/swiper-bundle.css';
 
+// SwiperCore.use([Navigation]);
 
 export const API_URL = "http://localhost:8080";
 
@@ -15,8 +19,7 @@ const BookProfiles = () => {
         const fetchBookProfiles = async () => {
             try {
                 const response = await axios.get(`${API_URL}/api/book-profiles/genre/${genre}`);
-                console.log('API Response:', response.data);
-                setBookProfiles(response.data); 
+                setBookProfiles(response.data);
                 setLoading(false);
             } catch (error) {
                 console.error('Error fetching book profiles:', error);
@@ -40,13 +43,20 @@ const BookProfiles = () => {
 
     return (
         <div>
-            <ul>
+            <h2>Hi!</h2>
+            <Swiper
+                spaceBetween={30}
+                slidesPerView={1}
+                navigation
+            >
                 {bookProfiles.map((profile) => (
-                    <li key={profile.id}>
-                        <p>{profile.structured_description}</p>
-                    </li>
+                    <SwiperSlide key={profile.id}>
+                        <div>
+                            <p>{profile.structured_description}</p>
+                        </div>
+                    </SwiperSlide>
                 ))}
-            </ul>
+            </Swiper>
         </div>
     );
 };
