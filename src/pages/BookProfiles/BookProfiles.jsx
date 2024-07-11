@@ -1,55 +1,54 @@
-import { useState, useEffect } from 'react';
+import React, { useState, useEffect } from 'react';
 import axios from 'axios';
-import ReactDOM from 'react-dom';
-import ReactSwipe from 'react-swipe';
+import { useParams } from 'react-router-dom';
 
 
+export const API_URL = "http://localhost:8080";
 
-const SwipeableBookProfiles = ({ genre }) => {
+const BookProfiles = () => {
+    const { genre } = useParams();
     const [bookProfiles, setBookProfiles] = useState([]);
-    const [currentIndex, setCurrentIndex] = useState(0);
+    const [loading, setLoading] = useState(true);
+    const [error, setError] = useState(null);
 
     useEffect(() => {
         const fetchBookProfiles = async () => {
-        try {
-            const response = await axios.get(`/api/book-profiles/genre/${genre}`);
-            setBookProfiles(response.data);
-        } catch (error) {
-            console.error('Error fetching book profiles:', error);
-        }
-    };
+            try {
+                const response = await axios.get(`${API_URL}/api/book-profiles/genre/${genre}`);
+                console.log('API Response:', response.data);
+                setBookProfiles(response.data); 
+                setLoading(false);
+            } catch (error) {
+                console.error('Error fetching book profiles:', error);
+                setError(error);
+                setLoading(false);
+            }
+        };
 
-    fetchBookProfiles();
+        if (genre) {
+            fetchBookProfiles();
+        }
     }, [genre]);
 
-    const handleSwipeLeft = () => {
-        setCurrentIndex((prevIndex) => Math.min(prevIndex + 1, bookProfiles.length - 1));
-    };
+    if (loading) {
+        return <p>Loading...</p>;
+    }
 
-    const handleSwipeRight = () => {
-        setCurrentIndex((prevIndex) => Math.max(prevIndex - 1, 0));
-    };
+    if (error) {
+        return <p>Error: {error.message}</p>;
+    }
 
-return (
-    <div>
-    <h2>Book Profiles from {genre}</h2>
-    <Swipeable
-        onSwipedLeft={handleSwipeLeft}
-        onSwipedRight={handleSwipeRight}
-    >
+    return (
         <div>
-        {bookProfiles.length > 0 ? (
-            <div>
-            <p>{bookProfiles[currentIndex].structured_description}</p>
-   
-            </div>
-        ) : (
-            <p>No book profiles found for {genre}</p>
-        )}
+            <ul>
+                {bookProfiles.map((profile) => (
+                    <li key={profile.id}>
+                        <p>{profile.structured_description}</p>
+                    </li>
+                ))}
+            </ul>
         </div>
-    </Swipeable>
-    </div>
     );
 };
 
-export default SwipeableBookProfiles;
+export default BookProfiles;
