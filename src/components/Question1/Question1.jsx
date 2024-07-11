@@ -2,6 +2,7 @@ import { useNavigate, useParams } from "react-router-dom";
 import { useState } from "react";
 import axios from 'axios';
 import "./Question1.scss";
+import martini from "../../assets/Images/Martini.png"
 
 export const API_URL = import.meta.env.VITE_API_URL;
 
@@ -24,40 +25,40 @@ function Question1() {
             <section className="imgsQuestion--cardsSection">
 
 
-            <div className="imgsQuestion--cardContainer" onClick={() => handleGenreSelection("Contemporary,Feminism")}>
-                    <p>Contemporary/ Feminism</p>
+                <div className="imgsQuestion--cardContainer" onClick={() => handleGenreSelection("Contemporary,Feminism")}>
+                    <img className="martiniImg" src={martini} alt="illustration of martini with heart-shaped olives"/>
                 </div>
 
                 <div className="imgsQuestion--cardContainer">
-                    <p>Magical Realism/ Historical Fiction/ Fantasy</p>
+                    <img className="martiniImg" src={martini} alt="illustration of martini with heart-shaped olives"/>
                 </div>
 
                 <div className="imgsQuestion--cardContainer">
-                    <p>Horror/Thriller/Science Fiction</p>
+                    <img className="martiniImg" src={martini} alt="illustration of martini with heart-shaped olives"/>
                 </div>
 
                 <div className="imgsQuestion--cardContainer">
-                    <p>Poetry/Memoir/Mental Health/ Race</p>
+                    <img className="martiniImg" src={martini} alt="illustration of martini with heart-shaped olives"/>  
                 </div>
 
                 <div className="imgsQuestion--cardContainer">
-                    <p>Romance/ Coming of Age</p>
+                    <img className="martiniImg" src={martini} alt="illustration of martini with heart-shaped olives"/>
                 </div>
 
                 <div className="imgsQuestion--cardContainer">
-                    <p>YA/Mystery/Family</p>
+                    <img className="martiniImg" src={martini} alt="illustration of martini with heart-shaped olives"/>
                 </div>
 
                 <div className="imgsQuestion--cardContainer">
-                    <p>Mythology/Retellings</p>
+                    <img className="martiniImg" src={martini} alt="illustration of martini with heart-shaped olives"/>
                 </div>
 
                 <div className="imgsQuestion--cardContainer">
-                    <p>Queer</p>
+                    <img className="martiniImg" src={martini} alt="illustration of martini with heart-shaped olives"/>
                 </div>
 
                 <div className="imgsQuestion--cardContainer">
-                    <p>Canadian Literture/Nature/Indingenous</p>
+                    <img className="martiniImg" src={martini} alt="illustration of martini with heart-shaped olives"/>
                 </div>
             </section>
         </main>

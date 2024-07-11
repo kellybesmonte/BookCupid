@@ -1,0 +1,43 @@
+@import "../../styles/partials/mixins.scss";
+@import "../../styles/partials/typography.scss";
+@import "../../styles/partials/variables.scss";
+
+.imgsQuestion--section {
+    background-color: $candy-pink;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center; 
+    align-items: center;
+
+
+    .imgsQuestion--cardsSection {
+        display: flex;
+        flex-wrap: wrap;
+
+        justify-content: space-around;
+        align-items: flex-start; 
+        gap: 1rem;
+        padding-bottom: 2rem;
+        width: 80%;
+
+        
+
+        .imgsQuestion--cardContainer {
+            @include border-radius;
+            background-color: $off-white;
+            width: 30%;
+    
+            .martiniImg {
+                display: inline;
+                width: 100%;
+
+            }
+        
+        }
+
+    }
+
+
+
+}

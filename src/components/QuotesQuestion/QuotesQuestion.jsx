@@ -1,12 +1,12 @@
-import { useState, useEffect } from "react";
+import React, { useState, useEffect } from "react";
+import { Link, useParams } from "react-router-dom";
 import axios from 'axios';
-import { useParams } from "react-router-dom";
 import "./QuotesQuestion.scss";
 
 export const API_URL = "http://localhost:8080";
 
 function QuotesQuestion() {
-    const { genres } = useParams(); 
+    const { genres } = useParams();
     const [quotes, setQuotes] = useState([]);
     const [loading, setLoading] = useState(true);
     const [error, setError] = useState(null);
@@ -18,12 +18,12 @@ function QuotesQuestion() {
                 if (response.status !== 200) {
                     throw new Error('Failed to fetch data');
                 }
-                setQuotes(response.data); 
-                setLoading(false); 
+                setQuotes(response.data);
+                setLoading(false);
             } catch (error) {
                 console.error('Error fetching data:', error);
-                setError(error); 
-                setLoading(false); 
+                setError(error);
+                setLoading(false);
             }
         };
 
@@ -50,7 +50,6 @@ function QuotesQuestion() {
             <ul>
                 {quotes.map((quote) => (
                     <li key={quote.id}>
-                    
                         <Link to={`/book-profiles/${quote.genre}`} className="quote-link">
                             <blockquote>{quote.quote}</blockquote>
                         </Link>
@@ -60,5 +59,5 @@ function QuotesQuestion() {
         </main>
     );
 }
-export default QuotesQuestion;
 
+export default QuotesQuestion;

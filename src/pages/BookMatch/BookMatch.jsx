@@ -16,10 +16,10 @@ const BookMatch = () => {
                 const response = await axios.get(`${API_URL}/books/${bookId}`);
                 console.log('Book information fetched successfully:', response.data);
                 setBookInfo(response.data);
+                setLoading(false);
             } catch (error) {
                 console.error('Error fetching book information:', error);
                 setError('Failed to fetch book information. Please try again later.');
-            } finally {
                 setLoading(false);
             }
         };
@@ -43,7 +43,7 @@ const BookMatch = () => {
         <div>
             <h2>Hi!</h2>
             <div>
-                <p>Name: {bookInfo.title}</p>
+                <p>Title: {bookInfo.title}</p>
                 <p>Author: {bookInfo.author}</p>
                 <p>Description: {bookInfo.description}</p>
                 <p>Type: {bookInfo.class}</p>
