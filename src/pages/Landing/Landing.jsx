@@ -13,6 +13,14 @@ function Landing() {
                 <img className="langingPage--mainLogo" src={logo} />
                 <img className="langingPage--subLogo" src={logoText} />
             </div>
+            <div className="landingPage--buttonsContainer">
+                <div className="landingPage--questionButton">
+                    <p className="landingPage--buttonsText">Ready to find your next match?</p>
+                </div>
+                <button className="landingPage--startButton">
+                    <p className="landingPage--buttonsText">Get Started</p>
+                </button>
+            </div>
         </main>
     );
 }

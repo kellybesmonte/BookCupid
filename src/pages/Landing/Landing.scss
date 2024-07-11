@@ -2,23 +2,64 @@
 @import "../../styles/partials/typography.scss";
 @import "../../styles/partials/variables.scss";
 
-
-
 body {
     background-color: $off-white;
+    color: $off-white;
+    font-family: "Avenir Next LT";
+    margin: 0;
+    padding: 0;
 }
 
 .landingPage--section {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-
+    text-align: center; 
 
     .langingPage--logosContainer {
-        width: 60%;
-        margin-left: 0 auto;
-        margin-right: 0 auto;
+        display: inline-block; 
+        width: 70%;
+        margin-top: 6rem;
+        
+        .langingPage--mainLogo {
+            margin-bottom: 0;
+        }
+
+        .langingPage--subLogo {
+            margin-top: -1rem;
+        }
     }
 
+    .landingPage--buttonsContainer {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
 
+        .landingPage--questionButton {
+            @include border-radius;
+            @include landing-page-buttons;
+            background-color: $petal-pink;
+            margin-bottom: 0.75rem;
+        }
+
+        .landingPage--startButton {
+            @include border-radius;
+            @include reset-button;
+            @include landing-page-buttons;
+            background-color: $main-red;
+            color: $off-white;
+            text-transform: uppercase;
+            cursor: pointer;
+
+            &:hover {
+                background-color: $bright-red;
+                transform: rotate(2.5deg);
+            }
+        }
+
+
+        .landingPage--buttonsText {
+            @include reset-list-2;
+            
+
+        }
+    }
 }

@@ -24,3 +24,23 @@
     margin-block-start: 0rem;
     margin-block-end: 0rem;
 }
+
+@mixin reset-list-2 {
+    margin-top: 0rem;
+    margin-bottom: 0rem;
+}
+
+
+@mixin reset-button {
+    border: none;
+}
+@mixin border-radius {
+    border-radius: 2rem 2rem 2rem 2rem;
+}
+
+@mixin landing-page-buttons {
+    padding-top: 0.5rem;
+    padding-bottom: 0.5rem;
+    width: 18.125rem;
+    box-shadow: 4px 4px 4px 0px rgba(0, 0, 0, 0.2);
+}
