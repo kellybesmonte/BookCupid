@@ -1,11 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
-import { useParams } from 'react-router-dom';
-// import SwiperCore, { Navigation } from 'swiper';
+import { Link, useParams } from 'react-router-dom'; // Import Link from react-router-dom
 import { Swiper, SwiperSlide } from 'swiper/react';
 import 'swiper/swiper-bundle.css';
-
-// SwiperCore.use([Navigation]);
 
 export const API_URL = "http://localhost:8080";
 
@@ -43,7 +40,7 @@ const BookProfiles = () => {
 
     return (
         <div>
-            <h2>Hi!</h2>
+            <h2>Book Profiles from {genre}</h2>
             <Swiper
                 spaceBetween={30}
                 slidesPerView={1}
@@ -51,9 +48,11 @@ const BookProfiles = () => {
             >
                 {bookProfiles.map((profile) => (
                     <SwiperSlide key={profile.id}>
-                        <div>
-                            <p>{profile.structured_description}</p>
-                        </div>
+                        <Link to={`/book-match/${profile.book_id}`} className="book-profile-link">
+                            <div>
+                                <p>{profile.structured_description}</p>
+                            </div>
+                        </Link>
                     </SwiperSlide>
                 ))}
             </Swiper>

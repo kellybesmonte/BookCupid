@@ -5,6 +5,7 @@ import Landing from './pages/Landing/Landing';
 import Question1 from './components/Question1/Question1';
 import QuotesQuestion from './components/QuotesQuestion/QuotesQuestion';
 import BookProfiles from './pages/BookProfiles/BookProfiles';
+import BookMatch from './pages/BookMatch/BookMatch';
 
 function App() {
   return (
@@ -15,6 +16,7 @@ function App() {
           <Route path="/question1" element={<Question1 />} />
           <Route path="/quotes/:genres" element={<QuotesQuestion />} />
           <Route path="/book-profiles/:genre" element={<BookProfiles />} />
+          <Route path="/book-match/:bookId" element={<BookMatch />} />
         </Routes>
   
     </Router>
