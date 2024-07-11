@@ -50,13 +50,15 @@ function QuotesQuestion() {
             <ul>
                 {quotes.map((quote) => (
                     <li key={quote.id}>
-                        <blockquote>{quote.quote}</blockquote>
+                    
+                        <Link to={`/book-profiles/${quote.genre}`} className="quote-link">
+                            <blockquote>{quote.quote}</blockquote>
+                        </Link>
                     </li>
                 ))}
             </ul>
         </main>
     );
 }
-
 export default QuotesQuestion;
 
