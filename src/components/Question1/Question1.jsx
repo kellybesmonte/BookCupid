@@ -1,10 +1,13 @@
-// function Question1() {
+
+
+
+function Question1() {
 
     
 
-//     return (
+    // return (
 
-//     );
-// }
+    // );
+}
 
-// export default Question1;
+export default Question1;

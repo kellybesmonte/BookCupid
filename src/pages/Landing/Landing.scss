@@ -3,15 +3,18 @@
 @import "../../styles/partials/variables.scss";
 
 body {
-    background-color: $off-white;
-    color: $off-white;
+    // background-color: $off-white;
     font-family: "Avenir Next LT";
     margin: 0;
     padding: 0;
 }
 
 .landingPage--section {
+    background-color: $off-white;
+    color: $off-white;
     text-align: center; 
+    height: 100vh;
+    
 
     .langingPage--logosContainer {
         display: inline-block; 
