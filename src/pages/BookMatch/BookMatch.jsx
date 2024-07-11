@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react';
+import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import { useParams } from 'react-router-dom';
 
@@ -14,6 +14,7 @@ const BookMatch = () => {
         const fetchBookInfo = async () => {
             try {
                 const response = await axios.get(`${API_URL}/books/${bookId}`);
+                console.log('Book information fetched successfully:', response.data);
                 setBookInfo(response.data);
             } catch (error) {
                 console.error('Error fetching book information:', error);
@@ -34,14 +35,13 @@ const BookMatch = () => {
         return <p>Error: {error}</p>;
     }
 
-
     if (!bookInfo || !bookInfo.title) {
         return <p>No book information available for this ID.</p>;
     }
 
     return (
         <div>
-            <h2>Book Details</h2>
+            <h2>Hi!</h2>
             <div>
                 <p>Name: {bookInfo.title}</p>
                 <p>Author: {bookInfo.author}</p>

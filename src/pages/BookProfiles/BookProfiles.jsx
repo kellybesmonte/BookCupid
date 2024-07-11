@@ -40,7 +40,7 @@ const BookProfiles = () => {
 
     return (
         <div>
-            <h2>Book Profiles from {genre}</h2>
+            <h2>Choose your match!</h2>
             <Swiper
                 spaceBetween={30}
                 slidesPerView={1}
