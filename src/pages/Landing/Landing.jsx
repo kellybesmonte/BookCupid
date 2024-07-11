@@ -18,7 +18,7 @@ function Landing(props) {
                 <div className="landingPage--questionButton">
                     <p className="landingPage--buttonsText">Ready to find your next match?</p>
                 </div>
-                <Link to="/Question1" onClick={props.handleLogoClick}>
+                <Link to="/Question1" onClick={props.handleButtonClick}>
                     <button className="landingPage--startButton">
                         <p className="landingPage--buttonsText">Get Started</p>
                     </button>
