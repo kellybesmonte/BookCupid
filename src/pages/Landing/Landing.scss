@@ -14,19 +14,61 @@ body {
     color: $off-white;
     text-align: center; 
     height: 150vh;
+
+    .landingPage--desktopFlex {
+        @include responsive(tablet) {
+            @include center-container;
+            display: flex;
+        }
+
+        @include responsive(desktop) {
+            @include center-container;
+            display: flex;
+
+        }
+    }
+
     
 
     .langingPage--logosContainer {
         display: inline-block; 
         width: 70%;
         margin-top: 3rem;
+
+        @include responsive(tablet) {
+            width: 40%;
+            margin-right: 3rem;
+        }
+
+        @include responsive(desktop) {
+            width: 30%;
+            margin-right: 3rem;
+        }
         
         .langingPage--mainLogo {
             margin-bottom: 0;
+
+            @include responsive(tablet) {
+                width: 100%;
+            }
+
+            @include responsive(desktop) {
+                width: 100%;
+            }
         }
 
         .langingPage--subLogo {
             margin-top: -1rem;
+
+            @include responsive(tablet) {
+                width: 100%;
+                margin-top: -4.5rem;
+            }
+    
+            @include responsive(desktop) {
+                width: 100%;
+                margin-top: -5rem;
+            }
         }
     }
 
@@ -35,6 +77,7 @@ body {
         flex-direction: column;
         justify-content: center;
         align-items: center;
+
 
         .landingPage--questionButton {
             @include border-radius;
@@ -52,6 +95,15 @@ body {
             text-transform: uppercase;
             cursor: pointer;
 
+
+            @include responsive(tablet) {
+                @include responsive-padding-button;
+            }
+
+            @include responsive(desktop) {
+                @include responsive-padding-button;
+            }
+
             &:hover {
                 background-color: $bright-red;
                 transform: rotate(2.5deg);
@@ -61,6 +113,19 @@ body {
 
         .landingPage--buttonsText {
             @include reset-list-2;
+            
+
+            @include responsive(tablet) {
+                @include responsive-text-padding;
+                font-size: 1.25rem;
+            
+            }
+
+            @include responsive(desktop) {
+                @include responsive-text-padding;
+                font-size: 1.5rem;
+                
+            }
             
 
         }

@@ -29,7 +29,7 @@ function Question1() {
                     <img className="martiniImg" src={martini} alt="illustration of martini with heart-shaped olives"/>
                 </div>
 
-                <div className="imgsQuestion--cardContainer" onClick={() => handleGenreSelection("Historical,Classics")}>
+                <div className="imgsQuestion--cardContainer" onClick={() => handleGenreSelection("Historical Fiction,Classics")}>
                     <img className="martiniImg" src={martini} alt="illustration of martini with heart-shaped olives"/>
                 </div>
 
