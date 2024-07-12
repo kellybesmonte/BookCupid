@@ -3,7 +3,7 @@
 @import "../../styles/partials/variables.scss";
 
 .imgsQuestion--section {
-    background-color: $candy-pink;
+    background-color: $light-petal-pink;
     text-align: center;
     display: flex;
     flex-direction: column;
@@ -11,8 +11,7 @@
     align-items: center;
 
     .imgsQuestion--title {
-        font-family: "Avenir Next LT Bold";
-        color: $main-red;
+        @include questions-headers;
     }
 
 

@@ -47,9 +47,9 @@ function QuotesQuestion() {
     return (
         <main className="quotesQuestion--section">
             <h2 className="quotesQuestion--title">What quote resonates with you?</h2>
-            <ul>
+            <ul className="quotesQuestion--list">
                 {quotes.map((quote) => (
-                    <li key={quote.id}>
+                    <li className="quotesQuestion--quotes" key={quote.id}>
                         <Link to={`/book-profiles/${quote.genre}`} className="quote-link">
                             <blockquote>{quote.quote}</blockquote>
                         </Link>
