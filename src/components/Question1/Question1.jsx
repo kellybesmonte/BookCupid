@@ -29,35 +29,35 @@ function Question1() {
                     <img className="martiniImg" src={martini} alt="illustration of martini with heart-shaped olives"/>
                 </div>
 
-                <div className="imgsQuestion--cardContainer">
+                <div className="imgsQuestion--cardContainer" onClick={() => handleGenreSelection("Historical,Classics")}>
                     <img className="martiniImg" src={martini} alt="illustration of martini with heart-shaped olives"/>
                 </div>
 
-                <div className="imgsQuestion--cardContainer">
+                <div className="imgsQuestion--cardContainer" onClick={() => handleGenreSelection("Horror,Thriller,Science-Fiction")}>
                     <img className="martiniImg" src={martini} alt="illustration of martini with heart-shaped olives"/>
                 </div>
 
-                <div className="imgsQuestion--cardContainer">
+                <div className="imgsQuestion--cardContainer" onClick={() => handleGenreSelection("Poetry,Race")}>
                     <img className="martiniImg" src={martini} alt="illustration of martini with heart-shaped olives"/>  
                 </div>
 
-                <div className="imgsQuestion--cardContainer">
+                <div className="imgsQuestion--cardContainer" onClick={() => handleGenreSelection("Romance,Family")}>
                     <img className="martiniImg" src={martini} alt="illustration of martini with heart-shaped olives"/>
                 </div>
 
-                <div className="imgsQuestion--cardContainer">
+                <div className="imgsQuestion--cardContainer" onClick={() => handleGenreSelection("Young Adult")}>
                     <img className="martiniImg" src={martini} alt="illustration of martini with heart-shaped olives"/>
                 </div>
 
-                <div className="imgsQuestion--cardContainer">
+                <div className="imgsQuestion--cardContainer" onClick={() => handleGenreSelection("Fantasy")}>
                     <img className="martiniImg" src={martini} alt="illustration of martini with heart-shaped olives"/>
                 </div>
 
-                <div className="imgsQuestion--cardContainer">
+                <div className="imgsQuestion--cardContainer" onClick={() => handleGenreSelection("Queer")}>
                     <img className="martiniImg" src={martini} alt="illustration of martini with heart-shaped olives"/>
                 </div>
 
-                <div className="imgsQuestion--cardContainer">
+                <div className="imgsQuestion--cardContainer" onClick={() => handleGenreSelection("Nature")}>
                     <img className="martiniImg" src={martini} alt="illustration of martini with heart-shaped olives"/>
                 </div>
             </section>

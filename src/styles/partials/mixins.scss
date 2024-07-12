@@ -38,6 +38,10 @@
     border-radius: 2rem 2rem 2rem 2rem;
 }
 
+@mixin drop-shadow {
+    box-shadow: 4px 4px 4px 0px rgba(0, 0, 0, 0.2);
+}
+
 @mixin landing-page-buttons {
     padding-top: 0.5rem;
     padding-bottom: 0.5rem;

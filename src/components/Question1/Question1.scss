@@ -10,6 +10,11 @@
     justify-content: center; 
     align-items: center;
 
+    .imgsQuestion--title {
+        font-family: "Avenir Next LT Bold";
+        color: $main-red;
+    }
+
 
     .imgsQuestion--cardsSection {
         display: flex;
@@ -25,8 +30,13 @@
 
         .imgsQuestion--cardContainer {
             @include border-radius;
+            @include drop-shadow;
             background-color: $off-white;
             width: 30%;
+            &:hover {
+                transform: rotate(2.5deg);
+                cursor: pointer;
+            }
     
             .martiniImg {
                 display: inline;
