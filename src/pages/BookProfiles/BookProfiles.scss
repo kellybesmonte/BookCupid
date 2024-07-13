@@ -6,6 +6,13 @@
 .bookProfiles--section {
     background-color: $off-white;
     height: 100vh;
+    text-align: center;
+
+    .bookProfiles--title {
+        @include questions-headers;
+        @include reset-list-2;
+        padding-top: 1rem;
+    }
     
 }
 
@@ -20,14 +27,14 @@
 }
 
 .tinder-card {
-    @include drop-shadow;
+    @include drop-shadow-pink;
     @include border-radius;
     position: absolute;
-    width: 20rem;
+    width: 25rem;
     max-width: 85vw;
     height: 25rem;
     max-height: 85vh;
-    background-color: $candy-pink;
+    background-color: $light-petal-pink;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -47,4 +54,11 @@ a:hover {
 }
 a:active { 
     @include links;
+}
+
+.tinder-card--descriptionContainer {
+    @include responsive-text-padding;
+    .tinder-card--description {
+        font-size: 1.25rem;
+    }
 }

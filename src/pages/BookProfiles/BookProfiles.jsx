@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
 import axios from 'axios';
-import { Link, useParams } from 'react-router-dom';
+import { useNavigate, useParams } from 'react-router-dom';
 import TinderCard from 'react-tinder-card';
 import "./BookProfiles.scss";
 
@@ -11,6 +11,7 @@ const BookProfiles = () => {
     const [bookProfiles, setBookProfiles] = useState([]);
     const [loading, setLoading] = useState(true);
     const [error, setError] = useState(null);
+    const navigate = useNavigate();
 
     useEffect(() => {
         const fetchBookProfiles = async () => {
@@ -30,6 +31,12 @@ const BookProfiles = () => {
         }
     }, [genre]);
 
+    const handleSwipe = (direction, bookId) => {
+        if (direction === 'right') {
+            navigate(`/book-match/${bookId}`);
+        }
+    };
+
     if (loading) {
         return <p>Loading...</p>;
     }
@@ -40,15 +47,17 @@ const BookProfiles = () => {
 
     return (
         <main className='bookProfiles--section'>
-            <h2>Choose your match!</h2>
+            <h2 className='bookProfiles--title'>Choose your match!</h2>
             <div className="tinder-card-container">
                 {bookProfiles.map((profile) => (
-                    <TinderCard key={profile.id} className="tinder-card">
-                        <Link to={`/book-match/${profile.book_id}`} className="book-profile-link">
-                            <div className='tinder-card--descriptionContainer'>
-                                <p className='tinder-card--description'>{profile.structured_description}</p>
-                            </div>
-                        </Link>
+                    <TinderCard
+                        key={profile.id}
+                        className="tinder-card"
+                        onSwipe={(direction) => handleSwipe(direction, profile.book_id)}
+                    >
+                        <div className='tinder-card--descriptionContainer'>
+                            <p className='tinder-card--description'>{profile.structured_description}</p>
+                        </div>
                     </TinderCard>
                 ))}
             </div>

@@ -45,7 +45,11 @@
 }
 
 @mixin drop-shadow {
-    box-shadow: 4px 4px 4px 0px rgba(0, 0, 0, 0.2);
+    box-shadow: 0.25rem 0.25rem 0.25rem 0px rgba(0, 0, 0, 0.2);
+}
+
+@mixin drop-shadow-pink{
+    box-shadow: 0.25rem 0.5rem 0.75rem rgba(237, 97, 151, 0.154);
 }
 
 @mixin landing-page-buttons {
