@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
 import axios from 'axios';
-import { useParams } from 'react-router-dom';
+import { useParams, Link } from 'react-router-dom';
 import "./BookMatch.scss";
 
 export const API_URL = "http://localhost:8080";
@@ -16,10 +16,8 @@ const BookMatch = () => {
             try {
                 console.log('Fetching book information for bookId:', bookId);
                 const response = await axios.get(`${API_URL}/books/${bookId}`);
-                // console.log('Response data:', response.data);
                 setBookInfo(response.data);
             } catch (error) {
-                // console.error('Error fetching book information:', error);
                 setError('Failed to fetch book information. Please try again later.');
             } finally {
                 setLoading(false);
@@ -31,7 +29,7 @@ const BookMatch = () => {
         }
     }, [bookId]);
 
-    // console.log('Current state:', { loading, error, bookInfo });
+
 
     if (loading) {
         return <p>Loading...</p>;
@@ -56,7 +54,9 @@ const BookMatch = () => {
                 <p className='bookMatch--genre'>Genre: {Array.isArray(bookInfo.genre) ? bookInfo.genre.join(', ') : bookInfo.genre}</p>
                 <p className='bookMatch--link'><a href={bookInfo.link} className='bookMatch--a'>Click here to save it on Goodreads!</a></p>
             </div>
-            <img className='bookMatch--next' src='../../assets/Logo/thankunext.png' alt="red script font that reads thank you next" />
+            <Link to={`/more-book-recs/${bookInfo.genre}`}>
+                <img className='bookMatch--next' src='../../assets/Logo/thankunext.png' alt="red script font that reads thank you next" />
+            </Link>
         </main>
     );
 };
