@@ -12,12 +12,22 @@ const BookProfiles = () => {
     const [loading, setLoading] = useState(true);
     const [error, setError] = useState(null);
     const navigate = useNavigate();
+    const [currentIndex, setCurrentIndex] = useState(0);
+
+    const shuffleArray = (array) => {
+        for (let i = array.length - 1; i > 0; i--) {
+            const j = Math.floor(Math.random() * (i + 1));
+            [array[i], array[j]] = [array[j], array[i]];
+        }
+        return array;
+    };
 
     useEffect(() => {
         const fetchBookProfiles = async () => {
             try {
                 const response = await axios.get(`${API_URL}/api/book-profiles/genre/${genre}`);
-                setBookProfiles(response.data);
+                const shuffledProfiles = shuffleArray(response.data);
+                setBookProfiles(shuffledProfiles);
                 setLoading(false);
             } catch (error) {
                 console.error('Error fetching book profiles:', error);
@@ -35,6 +45,14 @@ const BookProfiles = () => {
         if (direction === 'right') {
             navigate(`/book-match/${bookId}`);
         }
+
+        const newIndex = currentIndex + 1;
+        setCurrentIndex(newIndex);
+
+        if (newIndex >= bookProfiles.length) {
+            alert("Aren't you a picky reader! Want to start again?");
+            navigate('/');
+        }
     };
 
     if (loading) {
@@ -48,8 +66,9 @@ const BookProfiles = () => {
     return (
         <main className='bookProfiles--section'>
             <h2 className='bookProfiles--title'>Choose your match!</h2>
+            <h4 className='bookProfiles--subheader'>Swipe left until you find the one! When you do, swipe right!😘</h4>
             <div className="tinder-card-container">
-                {bookProfiles.map((profile) => (
+                {bookProfiles.map((profile, index) => (
                     <TinderCard
                         key={profile.id}
                         className="tinder-card"
@@ -66,3 +85,4 @@ const BookProfiles = () => {
 };
 
 export default BookProfiles;
+
