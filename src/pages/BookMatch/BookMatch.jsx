@@ -47,14 +47,16 @@ const BookMatch = () => {
 
     return (
         <main className='bookMatch--section'>
+            <img className='bookMatch--illustration' src='../../assets/Images/RedBook.svg' alt="illustration of red book with white heart" />
             <div className='bookMatch-infoContainer'>
-                <h2 className='bookMatch--title'>Title: {bookInfo.title}</h2>
-                <h3 className='bookMatch--author'>Author: {bookInfo.author}</h3>
-                <h4 className='bookMatch--description'>Description: {bookInfo.description}</h4>
-                <p className='bookMatch--text'>Type: {bookInfo.class}</p>
-                <p className='bookMatch--text'>Genre: {Array.isArray(bookInfo.genre) ? bookInfo.genre.join(', ') : bookInfo.genre}</p>
-                <p className='bookMatch--text'>Link: <a href={bookInfo.link}>{bookInfo.link}</a></p>
+                <h2 className='bookMatch--title'>{bookInfo.title}</h2>
+                <h3 className='bookMatch--author'>{bookInfo.author}</h3>
+                <h4 className='bookMatch--description'>{bookInfo.description}</h4>
+                <p className='bookMatch--type'>Type: {bookInfo.class}</p>
+                <p className='bookMatch--genre'>Genre: {Array.isArray(bookInfo.genre) ? bookInfo.genre.join(', ') : bookInfo.genre}</p>
+                <p className='bookMatch--link'><a href={bookInfo.link} className='bookMatch--a'>Click here to save it on Goodreads!</a></p>
             </div>
+            <img className='bookMatch--next' src='../../assets/Logo/thankunext.png' alt="red script font that reads thank you next" />
         </main>
     );
 };
