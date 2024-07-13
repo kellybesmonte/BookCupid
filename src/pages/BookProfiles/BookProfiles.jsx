@@ -1,8 +1,8 @@
-import  { useState, useEffect } from 'react';
+import { useState, useEffect } from 'react';
 import axios from 'axios';
-import { Link, useParams } from 'react-router-dom'; 
-import { Swiper, SwiperSlide } from 'swiper/react';
-import 'swiper/swiper-bundle.css';
+import { Link, useParams } from 'react-router-dom';
+import TinderCard from 'react-tinder-card';
+import "./BookProfiles.scss";
 
 export const API_URL = "http://localhost:8080";
 
@@ -41,21 +41,17 @@ const BookProfiles = () => {
     return (
         <div>
             <h2>Choose your match!</h2>
-            <Swiper
-                spaceBetween={30}
-                slidesPerView={1}
-                navigation
-            >
+            <div className="tinder-card-container">
                 {bookProfiles.map((profile) => (
-                    <SwiperSlide key={profile.id}>
+                    <TinderCard key={profile.id} className="tinder-card">
                         <Link to={`/book-match/${profile.book_id}`} className="book-profile-link">
                             <div>
                                 <p>{profile.structured_description}</p>
                             </div>
                         </Link>
-                    </SwiperSlide>
+                    </TinderCard>
                 ))}
-            </Swiper>
+            </div>
         </div>
     );
 };
