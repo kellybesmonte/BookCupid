@@ -7,6 +7,8 @@
     color: $dark-red;
     text-align: center;
 
+
+
     .quotesQuestion--title{
         @include questions-headers;
     }
@@ -16,6 +18,16 @@
         padding-left: 0;
         margin-left: 2.5rem;
         margin-right: 2.5rem;
+
+        @include responsive(tablet) {
+            @include column-center;
+        
+        }
+
+        @include responsive(desktop) {
+            @include column-center;
+        }
+
 
         li {
             @include border-radius;
@@ -37,13 +49,18 @@
             &:nth-child(3n + 3) {
                 background-color: $strawberry;
             }
-
-
             
             &:hover {
                 cursor: pointer;
                 transform: scale(1.05);
+            }
+
+            @include responsive(tablet) {
+                width: 60%
+            }
     
+            @include responsive(desktop) {
+                width: 45%
             }
 
         }

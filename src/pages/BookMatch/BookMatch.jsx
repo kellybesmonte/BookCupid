@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react';
 import axios from 'axios';
 import { useParams } from 'react-router-dom';
+import "./BookMatch.scss";
 
 export const API_URL = "http://localhost:8080";
 
@@ -15,10 +16,10 @@ const BookMatch = () => {
             try {
                 console.log('Fetching book information for bookId:', bookId);
                 const response = await axios.get(`${API_URL}/books/${bookId}`);
-                console.log('Response data:', response.data);
+                // console.log('Response data:', response.data);
                 setBookInfo(response.data);
             } catch (error) {
-                console.error('Error fetching book information:', error);
+                // console.error('Error fetching book information:', error);
                 setError('Failed to fetch book information. Please try again later.');
             } finally {
                 setLoading(false);
@@ -30,7 +31,7 @@ const BookMatch = () => {
         }
     }, [bookId]);
 
-    console.log('Current state:', { loading, error, bookInfo });
+    // console.log('Current state:', { loading, error, bookInfo });
 
     if (loading) {
         return <p>Loading...</p>;
@@ -45,17 +46,16 @@ const BookMatch = () => {
     }
 
     return (
-        <div>
-            <h2>Book Information</h2>
-            <div>
-                <p>Title: {bookInfo.title}</p>
-                <p>Author: {bookInfo.author}</p>
-                <p>Description: {bookInfo.description}</p>
-                <p>Type: {bookInfo.class}</p>
-                <p>Genre: {Array.isArray(bookInfo.genre) ? bookInfo.genre.join(', ') : bookInfo.genre}</p>
-                <p>Link: <a href={bookInfo.link} target="_blank" rel="noopener noreferrer">{bookInfo.link}</a></p>
+        <main className='bookMatch--section'>
+            <div className='bookMatch-infoContainer'>
+                <h2 className='bookMatch--title'>Title: {bookInfo.title}</h2>
+                <h3 className='bookMatch--author'>Author: {bookInfo.author}</h3>
+                <h4 className='bookMatch--description'>Description: {bookInfo.description}</h4>
+                <p className='bookMatch--text'>Type: {bookInfo.class}</p>
+                <p className='bookMatch--text'>Genre: {Array.isArray(bookInfo.genre) ? bookInfo.genre.join(', ') : bookInfo.genre}</p>
+                <p className='bookMatch--text'>Link: <a href={bookInfo.link}>{bookInfo.link}</a></p>
             </div>
-        </div>
+        </main>
     );
 };
 

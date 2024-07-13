@@ -75,7 +75,13 @@
     color: $main-red;
 }
 
+@mixin column-center {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
 @mixin links {
     text-decoration: none; 
     color: $dark-red;
 }
+

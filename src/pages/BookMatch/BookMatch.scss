@@ -1,0 +1,24 @@
+@import "../../styles/partials/mixins.scss";
+@import "../../styles/partials/typography.scss";
+@import "../../styles/partials/variables.scss";
+
+
+.bookMatch--section {
+    background-color: $off-white;
+    height: 150vh;
+    text-align: center;
+    color: $dark-red;
+
+}
+
+.bookMatch-infoContainer{
+    @include responsive-text-padding;
+
+    .bookMatch--title{
+        @include reset-list-2;
+        color: $main-red;
+        font-family: "Avenir Next LT Bold";
+        padding-top: 1rem;
+
+    }
+}
