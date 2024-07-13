@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react';
 import axios from 'axios';
 import { useParams } from 'react-router-dom';
+import "./MoreBookRecs.scss";
 
 const API_URL = "http://localhost:8080";
 
@@ -37,18 +38,18 @@ const MoreBookRecs = () => {
     }
 
     return (
-        <div>
-            <h1>Books Recommendations for {genre}</h1>
-            <ul>
+        <main className='moreBookRecs--section'>
+            <h2 className='moreBookRecs--title'>More books for you to read!</h2>
+            <ul className='moreBookRecs--ul'>
                 {books.map(book => (
-                    <li key={book.id}>
-                        <h2>{book.title}</h2>
-                        <p>Author: {book.author}</p>
-                    
+                    <li className='moreBookRecs--li' key={book.id}>
+                        <h3 className='moreBookRecs--title'>{book.title}</h3>
+                        <p className='moreBookRecs--author'>Author: {book.author}</p>
+                        <p className='moreBookRecs--link'><a href={book.link} className='moreBookRecs--a'>{book.link}</a></p>
                     </li>
                 ))}
             </ul>
-        </div>
+        </main>
     );
 };
 
