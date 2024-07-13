@@ -70,3 +70,8 @@
     font-family: "Avenir Next LT Bold";
     color: $main-red;
 }
+
+@mixin links {
+    text-decoration: none; 
+    color: $dark-red;
+}

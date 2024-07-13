@@ -1,3 +1,13 @@
+@import "../../styles/partials/mixins.scss";
+@import "../../styles/partials/typography.scss";
+@import "../../styles/partials/variables.scss";
+
+
+.bookProfiles--section {
+    background-color: $off-white;
+    height: 100vh;
+    
+}
 
 
 .tinder-card-container {
@@ -10,17 +20,31 @@
 }
 
 .tinder-card {
+    @include drop-shadow;
+    @include border-radius;
     position: absolute;
-    width: 300px;
+    width: 20rem;
     max-width: 85vw;
-    height: 400px;
+    height: 25rem;
     max-height: 85vh;
-    background-color: white;
-    box-shadow: 0px 10px 30px rgba(0, 0, 0, 0.1);
-    border-radius: 20px;
+    background-color: $candy-pink;
     display: flex;
     justify-content: center;
     align-items: center;
     overflow: hidden;
     will-change: transform;
+}
+
+
+a:link { 
+    @include links;
+}
+a:visited { 
+    @include links;
+}
+a:hover { 
+    @include links;
+}
+a:active { 
+    @include links;
 }

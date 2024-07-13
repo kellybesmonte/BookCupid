@@ -39,20 +39,20 @@ const BookProfiles = () => {
     }
 
     return (
-        <div>
+        <main className='bookProfiles--section'>
             <h2>Choose your match!</h2>
             <div className="tinder-card-container">
                 {bookProfiles.map((profile) => (
                     <TinderCard key={profile.id} className="tinder-card">
                         <Link to={`/book-match/${profile.book_id}`} className="book-profile-link">
-                            <div>
-                                <p>{profile.structured_description}</p>
+                            <div className='tinder-card--descriptionContainer'>
+                                <p className='tinder-card--description'>{profile.structured_description}</p>
                             </div>
                         </Link>
                     </TinderCard>
                 ))}
             </div>
-        </div>
+        </main>
     );
 };
 
