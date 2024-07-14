@@ -1,0 +1,75 @@
+@import "../../styles/partials/mixins.scss";
+@import "../../styles/partials/typography.scss";
+@import "../../styles/partials/variables.scss";
+
+
+.moreBookRecs--section {
+    background-color: $petal-pink;
+    min-height: 100vh;
+    color: $very-dark-red;
+    padding-bottom: 2rem;
+}
+
+.moreBookRecs--title {
+    @include reset-list-2;
+    @include responsive-text-padding;
+    font-family: "Avenir Next LT Bold";
+    color: $dark-red;
+    padding-top: 2rem;
+    
+}
+
+.moreBookRecs--ul {
+    padding-inline-start: 0;
+    list-style: none;
+    margin-left: 2rem;
+    margin-right: 2rem;
+    
+
+    .moreBookRecs--li {
+        @include border-radius;
+        background-color: $light-petal-pink;
+        padding: 1rem;
+        margin-bottom: 0.75rem;
+
+        .moreBookRecs--bookTitle{
+            font-family: "Avenir Next LT Bold";
+        }
+    
+    }
+
+}
+
+.moreBookRecs--imgContainer {
+    @include center-container;
+    margin-top: 2rem;
+    display: flex;
+
+    .moreBookRecs--img {
+        width: 60%;
+
+        @include responsive(tablet) {
+            width: 50%;
+        }
+
+        @include responsive(desktop) {
+            width: 40%;
+        }
+    }
+}
+
+.moreBookRecs--button {
+    @include border-radius;
+    @include reset-button;
+    @include landing-page-buttons;
+    background-color: $main-red;
+    color: $off-white;
+    font-size: 1rem;
+    cursor: pointer;
+
+                &:hover {
+                background-color: $bright-red;
+                transform: rotate(2.5deg);
+            }
+    
+}

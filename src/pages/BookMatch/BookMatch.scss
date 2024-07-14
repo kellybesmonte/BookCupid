@@ -1,0 +1,115 @@
+@import "../../styles/partials/mixins.scss";
+@import "../../styles/partials/typography.scss";
+@import "../../styles/partials/variables.scss";
+
+
+.bookMatch--section {
+    background-color: $off-white;
+    min-height: 100vh;
+    text-align: center;
+    color: $dark-red;
+
+
+}
+
+.bookMatch--illustration {
+    width: 50%;
+
+    @include responsive(tablet) {
+        width: 40%;
+    }
+
+    @include responsive(desktop) {
+        width: 20%;
+    }
+}
+
+.bookMatch-infoContainer{
+    @include responsive-text-padding;
+
+    @include responsive(tablet) {
+        @include column-center;
+        display: flex;
+    }
+
+    @include responsive(desktop) {
+        @include column-center;
+        display: flex;
+    }
+
+
+
+    .bookMatch--title{
+        @include reset-list-2;
+        color: $main-red;
+        font-family: "Avenir Next LT Bold";
+        padding-top: 1rem;
+
+    }
+
+    .bookMatch--description {
+        @include border-radius;
+        @include drop-shadow-pink;
+        background-color: $light-petal-pink;
+        padding: 2rem;
+
+        @include responsive(tablet) {
+            width: 70%;
+            padding: 2.5rem;
+        }
+    
+        @include responsive(desktop) {
+            width: 60%;
+            padding: 3rem;
+        }
+
+    }
+
+    .bookMatch--type {
+        @include border-radius;
+        background-color: $petal-pink;
+        color: $off-white;
+        padding: 1rem;
+        
+    }
+
+    .bookMatch--genre {
+        @include border-radius;
+        background-color: $strawberry;
+        color: $off-white;
+        padding: 1rem;
+    }
+
+    a.bookMatch--a{
+        font-family: "Avenir Next LT Bold";
+        text-decoration: none;
+    }
+
+    a.bookMatch--a:visited{
+        color: $dark-red;
+    }
+
+    a.bookMatch--a:hover{
+        color: $bright-red;
+    }
+
+
+}
+
+.bookMatch--next {
+    margin-top: 2rem;
+    margin-bottom: 1rem;
+    width: 40%;
+    &:hover {
+        cursor: pointer;
+        transform: scale(1.05);
+    }
+
+    @include responsive(tablet) {
+        width: 30%;
+    }
+
+    @include responsive(desktop) {
+        width: 20%;
+    }
+}

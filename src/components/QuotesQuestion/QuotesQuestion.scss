@@ -1,0 +1,78 @@
+@import "../../styles/partials/mixins.scss";
+@import "../../styles/partials/typography.scss";
+@import "../../styles/partials/variables.scss";
+
+
+.quotesQuestion--section {
+    color: $dark-red;
+    text-align: center;
+
+
+
+    .quotesQuestion--title{
+        @include questions-headers;
+    }
+
+    .quotesQuestion--list {
+        list-style: none;
+        padding-left: 0;
+        margin-left: 2.5rem;
+        margin-right: 2.5rem;
+
+        @include responsive(tablet) {
+            @include column-center;
+        
+        }
+
+        @include responsive(desktop) {
+            @include column-center;
+        }
+
+
+        li {
+            @include border-radius;
+            @include drop-shadow;
+            // background-color: $light-petal-pink;
+            padding-top: 0.2rem;
+            padding-bottom: 0.2rem;
+            margin-bottom: 1rem;
+
+
+            &:nth-child(3n + 1) {
+                background-color: $light-petal-pink;
+            }
+            
+            &:nth-child(3n + 2) {
+                background-color: $petal-pink;
+            }
+
+            &:nth-child(3n + 3) {
+                background-color: $strawberry;
+            }
+            
+            &:hover {
+                cursor: pointer;
+                transform: scale(1.05);
+            }
+
+            @include responsive(tablet) {
+                width: 60%
+            }
+    
+            @include responsive(desktop) {
+                width: 45%
+            }
+
+        }
+        .quote-link {
+            text-decoration: none; 
+            color: inherit; 
+
+            &:visited {
+                color: inherit;
+            }
+
+
+    }
+}
+}

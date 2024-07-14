@@ -1,0 +1,57 @@
+@import "../../styles/partials/mixins.scss";
+@import "../../styles/partials/typography.scss";
+@import "../../styles/partials/variables.scss";
+
+
+.bookProfiles--section {
+    background-color: $off-white;
+    height: 100vh;
+    text-align: center;
+
+    .bookProfiles--title {
+        @include questions-headers;
+        @include reset-list-2;
+        padding-top: 1rem;
+    }
+
+    .bookProfiles--subheader {
+        color: $dark-red;
+    }
+    
+}
+
+
+.tinder-card-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 80vh;
+    width: 100%;
+    position: relative;
+}
+
+.tinder-card {
+    @include drop-shadow-pink;
+    @include border-radius;
+    position: absolute;
+    width: 25rem;
+    max-width: 85vw;
+    height: 25rem;
+    max-height: 85vh;
+    background-color: $light-petal-pink;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    will-change: transform;
+}
+
+
+
+.tinder-card--descriptionContainer {
+    @include responsive-text-padding;
+    .tinder-card--description {
+        font-size: 1.25rem;
+        color: $dark-red;
+    }
+}

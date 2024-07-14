@@ -1,0 +1,88 @@
+@mixin responsive($breakpoint) {
+
+    @if $breakpoint == smartphone-portrait-small {
+        @media only screen and ( max-width: 766px ) {
+            @content;
+        }
+    }
+
+
+    @if $breakpoint == tablet {
+        @media only screen and ( min-width: 767px ) and ( max-width: 1279px ) {
+            @content;
+        }
+    }
+
+    @if $breakpoint == desktop {
+        @media only screen and ( min-width: 1280px ) {
+            @content;
+        }
+    }
+}
+
+@mixin center-container {
+    justify-content: center;
+    margin-left: 0 auto;
+    margin-right: 0 auto;
+}
+
+@mixin reset-list {
+    margin-block-start: 0rem;
+    margin-block-end: 0rem;
+}
+
+@mixin reset-list-2 {
+    margin-top: 0rem;
+    margin-bottom: 0rem;
+}
+
+
+@mixin reset-button {
+    border: none;
+}
+@mixin border-radius {
+    border-radius: 2rem 2rem 2rem 2rem;
+}
+
+@mixin drop-shadow {
+    box-shadow: 0.25rem 0.25rem 0.25rem 0px rgba(0, 0, 0, 0.2);
+}
+
+@mixin drop-shadow-pink{
+    box-shadow: 0.25rem 0.5rem 0.75rem rgba(237, 97, 151, 0.154);
+}
+
+@mixin landing-page-buttons {
+    padding-top: 0.5rem;
+    padding-bottom: 0.5rem;
+    width: 18.125rem;
+    box-shadow: 4px 4px 4px 0px rgba(0, 0, 0, 0.2);
+}
+
+@mixin responsive-padding-button {
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+
+}
+
+@mixin responsive-text-padding {
+    padding-left: 2rem;
+    padding-right: 2rem;
+}
+
+
+@mixin questions-headers {
+    font-family: "Avenir Next LT Bold";
+    color: $main-red;
+}
+
+@mixin column-center {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+@mixin links {
+    text-decoration: none; 
+    color: $dark-red;
+}
+

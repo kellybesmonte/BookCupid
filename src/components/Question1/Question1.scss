@@ -1,0 +1,60 @@
+@import "../../styles/partials/mixins.scss";
+@import "../../styles/partials/typography.scss";
+@import "../../styles/partials/variables.scss";
+
+.imgsQuestion--section {
+    background-color: $light-petal-pink;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center; 
+    align-items: center;
+    padding-bottom: 3rem;
+
+    .imgsQuestion--title {
+        @include questions-headers;
+    }
+
+
+    .imgsQuestion--cardsSection {
+        display: flex;
+        flex-wrap: wrap;
+
+        justify-content: space-around;
+        align-items: flex-start; 
+        gap: 1rem;
+        padding-bottom: 2rem;
+        width: 80%;
+
+        @include responsive(tablet) {
+            width: 60%
+        }
+
+        @include responsive(desktop) {
+            width: 35%
+        }
+        
+
+        .imgsQuestion--cardContainer {
+            @include border-radius;
+            @include drop-shadow;
+            background-color: $off-white;
+            width: 30%;
+            &:hover {
+                transform: rotate(2.5deg);
+                cursor: pointer;
+            }
+    
+            .martiniImg {
+                display: inline;
+                width: 100%;
+
+            }
+        
+        }
+
+    }
+
+
+
+}
