@@ -15,7 +15,6 @@ function QuotesQuestion() {
         const fetchData = async () => {
             try {
                 const response = await axios.get(`${API_URL}/quotes/genre/${genres}`);
-                console.log('Request URL:', `${API_URL}/quotes/genre/${genres}`);
                 if (response.status !== 200) {
                     throw new Error('Failed to fetch data');
                 }
@@ -62,4 +61,3 @@ function QuotesQuestion() {
 }
 
 export default QuotesQuestion;
-
