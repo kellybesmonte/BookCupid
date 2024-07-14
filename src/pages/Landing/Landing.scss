@@ -84,6 +84,14 @@ body {
             @include landing-page-buttons;
             background-color: $petal-pink;
             margin-bottom: 0.75rem;
+
+            @include responsive(tablet) {
+                margin-bottom: 2rem;
+            }
+
+            @include responsive(desktop) {
+                margin-bottom: 2rem;
+            }
         }
 
         .landingPage--startButton {
