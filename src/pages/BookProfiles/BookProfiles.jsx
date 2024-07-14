@@ -42,6 +42,7 @@ const BookProfiles = () => {
         }
     }, [genre]);
 
+    //Function that handles swipe/Tinder feature//
     const handleSwipe = (direction, bookId) => {
         if (direction === 'right') {
             navigate(`/book-match/${bookId}`);
