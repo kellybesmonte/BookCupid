@@ -65,7 +65,7 @@ function Question1() {
                     <img className="martiniImg" src={ring} alt="illustration of pink ring with red gemstone"/>
                 </div>
 
-                <div className="imgsQuestion--cardContainer" onClick={() => handleGenreSelection("Nature")}>
+                <div className="imgsQuestion--cardContainer" onClick={() => handleGenreSelection("Nature,Canadian Literture,Indigenous")}>
                     <img className="martiniImg" src={teabag} alt="illustration of tea bag with hearts"/>
                 </div>
             </section>
