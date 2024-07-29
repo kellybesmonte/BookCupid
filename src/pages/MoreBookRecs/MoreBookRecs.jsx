@@ -5,7 +5,7 @@ import { useParams } from 'react-router-dom';
 import imgText from '../../assets/Logo/thanksforplaying.svg'
 import "./MoreBookRecs.scss";
 
-const API_URL = "http://localhost:8080";
+export const API_URL = import.meta.env.VITE_API_URL;
 
 const MoreBookRecs = (props) => {
     const { genre } = useParams(); 
