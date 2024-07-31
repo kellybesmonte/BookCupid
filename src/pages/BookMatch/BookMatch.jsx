@@ -3,7 +3,7 @@ import axios from 'axios';
 import { useParams, Link } from 'react-router-dom';
 import "./BookMatch.scss";
 
-export const API_URL = import.meta.env.VITE_API_URL;
+const API_URL = 'https://bookcupid-server-production.up.railway.app';
 
 const BookMatch = () => {
     const { bookId } = useParams();
@@ -15,7 +15,7 @@ const BookMatch = () => {
         const fetchBookInfo = async () => {
             try {
                 console.log('Fetching book information for bookId:', bookId);
-                const response = await axios.get(`${API_URL}/books/${bookId}`);
+                const response = await axios.get(`${API_URL}/book_profiles/${bookId}`);
                 setBookInfo(response.data);
             } catch (error) {
                 setError('Failed to fetch book information. Please try again later.');
