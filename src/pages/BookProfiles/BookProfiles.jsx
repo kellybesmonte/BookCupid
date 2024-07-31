@@ -25,7 +25,7 @@ const BookProfiles = () => {
     useEffect(() => {
         const fetchBookProfiles = async () => {
             try {
-                const response = await axios.get(`${API_URL}/api/book_profiles/genre/${genre}`);
+                const response = await axios.get(`${API_URL}/book_profiles/genre/${genre}`);
                 const shuffledProfiles = shuffleArray(response.data);
                 setBookProfiles(shuffledProfiles);
                 setLoading(false);
