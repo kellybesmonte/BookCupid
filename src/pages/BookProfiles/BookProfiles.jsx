@@ -4,7 +4,7 @@ import { useNavigate, useParams } from 'react-router-dom';
 import TinderCard from 'react-tinder-card';
 import "./BookProfiles.scss";
 
-export const API_URL = 'https://bookcupid-server-production.up.railway.app';
+const API_URL = 'https://bookcupid-server-production.up.railway.app';
 
 const BookProfiles = () => {
     const { genre } = useParams();
@@ -85,4 +85,3 @@ const BookProfiles = () => {
 };
 
 export default BookProfiles;
-
