@@ -4,7 +4,7 @@ import { useNavigate, useParams } from 'react-router-dom';
 import TinderCard from 'react-tinder-card';
 import "./BookProfiles.scss";
 
-export const API_URL = import.meta.env.VITE_API_URL;
+export const API_URL = 'https://bookcupid-server-production.up.railway.app';
 
 const BookProfiles = () => {
     const { genre } = useParams();
@@ -26,7 +26,6 @@ const BookProfiles = () => {
         const fetchBookProfiles = async () => {
             try {
                 const response = await axios.get(`${API_URL}/api/book_profiles/genre/${genre}`);
-                ///shuffles responses so that it is different each time//
                 const shuffledProfiles = shuffleArray(response.data);
                 setBookProfiles(shuffledProfiles);
                 setLoading(false);
