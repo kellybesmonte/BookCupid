@@ -68,7 +68,7 @@ const BookProfiles = () => {
             <h2 className='bookProfiles--title'>Choose your match!</h2>
             <h4 className='bookProfiles--subheader'>Swipe left until you find the one! When you do, swipe right!😘</h4>
             <div className="tinder-card-container">
-                {bookProfiles.map((profile, index) => (
+                {bookProfiles.map((profile) => (
                     <TinderCard
                         key={profile.id}
                         className="tinder-card"
