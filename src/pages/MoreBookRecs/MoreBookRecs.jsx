@@ -54,11 +54,7 @@ const MoreBookRecs = (props) => {
                         <h3 className='moreBookRecs--bookTitle'>{book.title}</h3>
                         <p className='moreBookRecs--author'>{book.author}</p>
                         <p className='moreBookRecs--description'>{book.description}</p>
-                        <p className='moreBookRecs--link'>
-                            <a href={book.link} className='moreBookRecs--a' target="_blank" rel="noopener noreferrer">
-                                Goodreads Link
-                            </a>
-                        </p>
+                        <p className='moreBookRecs--link'><a href={book.link} className='moreBookRecs--a'>Goodreads Link</a></p>
                     </li>
                 ))}
             </ul>
@@ -77,4 +73,3 @@ const MoreBookRecs = (props) => {
 };
 
 export default MoreBookRecs;
-
