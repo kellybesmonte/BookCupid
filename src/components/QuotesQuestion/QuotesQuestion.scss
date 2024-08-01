@@ -4,14 +4,17 @@
 
 
 .quotesQuestion--section {
+    background-color: $off-white;
     color: $dark-red;
     text-align: center;
-    height: 150vh;
+    height: 100vh;
 
 
 
     .quotesQuestion--title{
         @include questions-headers;
+        @include reset-list;
+        padding-top: 2rem;
     }
 
     .quotesQuestion--list {

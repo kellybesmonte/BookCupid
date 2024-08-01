@@ -3,7 +3,7 @@ import axios from 'axios';
 import { useParams, Link } from 'react-router-dom';
 import "./BookMatch.scss";
 
-export const API_URL = "http://localhost:8080";
+const API_URL = 'https://bookcupid-server-production.up.railway.app';
 
 const BookMatch = () => {
     const { bookId } = useParams();
@@ -62,5 +62,3 @@ const BookMatch = () => {
 };
 
 export default BookMatch;
-
-

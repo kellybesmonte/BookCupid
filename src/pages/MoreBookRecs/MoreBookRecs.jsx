@@ -5,7 +5,7 @@ import { useParams } from 'react-router-dom';
 import imgText from '../../assets/Logo/thanksforplaying.svg'
 import "./MoreBookRecs.scss";
 
-const API_URL = "http://localhost:8080";
+const API_URL = 'https://bookcupid-server-production.up.railway.app';
 
 const MoreBookRecs = (props) => {
     const { genre } = useParams(); 

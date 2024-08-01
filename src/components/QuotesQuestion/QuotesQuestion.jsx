@@ -3,7 +3,7 @@ import { Link, useParams } from "react-router-dom";
 import axios from 'axios';
 import "./QuotesQuestion.scss";
 
-export const API_URL = "http://localhost:8080";
+const API_URL = 'https://bookcupid-server-production.up.railway.app';
 
 function QuotesQuestion() {
     const { genres } = useParams();
