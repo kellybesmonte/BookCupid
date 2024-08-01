@@ -14,7 +14,7 @@ const BookMatch = () => {
     useEffect(() => {
         const fetchBookInfo = async () => {
             try {
-                console.log('Fetching book information for bookId:', bookId);
+                // console.log('Fetching book information for bookId:', bookId);
                 const response = await axios.get(`${API_URL}/books/${bookId}`);
                 setBookInfo(response.data);
             } catch (error) {
