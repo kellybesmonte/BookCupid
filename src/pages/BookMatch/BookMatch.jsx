@@ -15,7 +15,7 @@ const BookMatch = () => {
         const fetchBookInfo = async () => {
             try {
                 console.log('Fetching book information for bookId:', bookId);
-                const response = await axios.get(`${API_URL}/book_profiles/${bookId}`);
+                const response = await axios.get(`${API_URL}/books/${bookId}`);
                 setBookInfo(response.data);
             } catch (error) {
                 setError('Failed to fetch book information. Please try again later.');
@@ -55,12 +55,10 @@ const BookMatch = () => {
                 <p className='bookMatch--link'><a href={bookInfo.link} className='bookMatch--a'>Click here to save it on Goodreads!</a></p>
             </div>
             <Link to={`/more-book-recs/${bookInfo.genre}`}>
-                <img className='bookMatch--next' src='../../assets/Logo/thankunext.png' alt="red script font that reads thank you next" />
+            <img className='bookMatch--next' src='../../assets/Logo/thankunext.png' alt="red script font that reads thank you next" />
             </Link>
         </main>
     );
 };
 
 export default BookMatch;
-
-

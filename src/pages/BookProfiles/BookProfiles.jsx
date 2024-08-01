@@ -11,8 +11,8 @@ const BookProfiles = () => {
     const [bookProfiles, setBookProfiles] = useState([]);
     const [loading, setLoading] = useState(true);
     const [error, setError] = useState(null);
-    const navigate = useNavigate();
     const [currentIndex, setCurrentIndex] = useState(0);
+    const navigate = useNavigate();
 
     const shuffleArray = (array) => {
         for (let i = array.length - 1; i > 0; i--) {
@@ -31,7 +31,7 @@ const BookProfiles = () => {
                 setLoading(false);
             } catch (error) {
                 console.error('Error fetching book profiles:', error);
-                setError(error);
+                setError('Failed to fetch book profiles. Please try again later.');
                 setLoading(false);
             }
         };
@@ -42,10 +42,18 @@ const BookProfiles = () => {
     }, [genre]);
 
     const handleSwipe = (direction, bookId) => {
+        console.log('Swiped direction:', direction);
+        console.log('Book ID:', bookId);
+
         if (direction === 'right') {
-            navigate(`/book-match/${bookId}`);
+            if (bookId) {
+                navigate(`/book-match/${bookId}`);
+            } else {
+                console.warn('Book ID is missing for swipe right');
+            }
         }
 
+        // Update index and handle out-of-bounds
         const newIndex = currentIndex + 1;
         setCurrentIndex(newIndex);
 
@@ -60,7 +68,7 @@ const BookProfiles = () => {
     }
 
     if (error) {
-        return <p>Error: {error.message}</p>;
+        return <p>Error: {error}</p>;
     }
 
     return (
@@ -68,20 +76,29 @@ const BookProfiles = () => {
             <h2 className='bookProfiles--title'>Choose your match!</h2>
             <h4 className='bookProfiles--subheader'>Swipe left until you find the one! When you do, swipe right!😘</h4>
             <div className="tinder-card-container">
-                {bookProfiles.map((profile) => (
-                    <TinderCard
-                        key={profile.id}
-                        className="tinder-card"
-                        onSwipe={(direction) => handleSwipe(direction, profile.book_id)}
-                    >
-                        <div className='tinder-card--descriptionContainer'>
-                            <p className='tinder-card--description'>{profile.structured_description}</p>
-                        </div>
-                    </TinderCard>
-                ))}
+                {bookProfiles.map((profile) => {
+                    const bookId = profile.book_id; // Ensure you're using the correct field
+                    if (!bookId) {
+                        console.warn('Book ID is missing for profile:', profile);
+                    }
+
+                    return (
+                        <TinderCard
+                            key={bookId} // Use bookId as the unique key
+                            className="tinder-card"
+                            onSwipe={(direction) => handleSwipe(direction, bookId)}
+                            preventSwipe={['up', 'down']} // Optional: restrict swipe directions
+                        >
+                            <div className='tinder-card--descriptionContainer'>
+                                <p className='tinder-card--description'>{profile.structured_description}</p>
+                            </div>
+                        </TinderCard>
+                    );
+                })}
             </div>
         </main>
     );
 };
 
 export default BookProfiles;
+
