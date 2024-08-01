@@ -54,7 +54,7 @@ const BookMatch = () => {
                 <p className='bookMatch--genre'>Genre: {Array.isArray(bookInfo.genre) ? bookInfo.genre.join(', ') : bookInfo.genre}</p>
                 <p className='bookMatch--link'><a href={bookInfo.link} className='bookMatch--a'>Click here to save it on Goodreads!</a></p>
             </div>
-            <Link to={`/more-book-recs/${bookInfo.genre}`} className='bookMatch--a' target="_blank" rel="noopener noreferrer">
+            <Link to={`/more-book-recs/${bookInfo.genre}`}>
                 <img className='bookMatch--next' src='../../assets/Logo/thankunext.png' alt="red script font that reads thank you next" />
             </Link>
         </main>
