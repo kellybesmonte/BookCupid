@@ -1,3 +1,12 @@
+import { useState, useEffect } from 'react';
+import { Link } from "react-router-dom";
+import axios from 'axios';
+import { useParams } from 'react-router-dom';
+import imgText from '../../assets/Logo/thanksforplaying.svg'
+import "./MoreBookRecs.scss";
+
+const API_URL = 'https://bookcupid-server-production.up.railway.app';
+
 const MoreBookRecs = (props) => {
     const { genre } = useParams(); 
     const [books, setBooks] = useState([]);
@@ -7,10 +16,10 @@ const MoreBookRecs = (props) => {
     useEffect(() => {
         const fetchBooksByGenre = async () => {
             try {
-                const response = await axios.get(`${API_URL}/books/genre/${encodeURIComponent(genre)}`);
+                const response = await axios.get(`${API_URL}/books/genre/${genre}`);
                 const allBooks = response.data;
 
-                // Randomizes results and shows a max of 4 books
+                ///Randomizes results and shows a max of 4 books///
                 const shuffledBooks = allBooks.sort(() => 0.5 - Math.random());
                 const selectedBooks = shuffledBooks.slice(0, 4);
 
@@ -58,11 +67,14 @@ const MoreBookRecs = (props) => {
             </div>
             <div className='moreBookRecs--imgContainer'>
                 <Link to="/" onClick={props.handleButtonClick}>
-                    <button className="moreBookRecs--button">
-                        <p className="moreBookRecs--buttonText">Play again?</p>
-                    </button>
+                        <button className="moreBookRecs--button">
+                            <p className="moreBookRecs--buttonText">Play again?</p>
+                        </button>
                 </Link>
             </div>
         </main>
     );
 };
+
+export default MoreBookRecs;
+
