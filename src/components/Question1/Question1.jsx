@@ -5,7 +5,7 @@ import "./Question1.scss";
 import martini from "../../assets/Images/Martini.png"
 import letter from "../../assets/Images/Letter.svg"
 import match from "../../assets/Images/Match.svg"
-import candyHearts from "../../assets/Images/CandyHearts-V2.svg"
+import candyHearts from "../../assets/Images/CandyHearts.svg"
 import flowers from "../../assets/Images/Flowers.svg"
 import latte from "../../assets/Images/Latte.svg"
 import strawberry from "../../assets/Images/Strawberry.svg"
