@@ -9,7 +9,7 @@
     flex-direction: column;
     align-items: center;
     padding-bottom: 3rem;
-    height: 11;
+    height: 100vh;
 
     @include responsive(tablet) {
         height: 100vh;
