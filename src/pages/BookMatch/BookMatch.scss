@@ -51,7 +51,7 @@
         @include border-radius;
         @include drop-shadow-pink;
         background-color: $light-petal-pink;
-        padding: 2rem;
+        padding: 0.75rem;
 
         @include responsive(tablet) {
             width: 70%;
