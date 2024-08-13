@@ -50,6 +50,7 @@
     .bookMatch--description {
         @include border-radius;
         @include drop-shadow-pink;
+        font-family: "Avenir Next LT";
         background-color: $light-petal-pink;
         padding: 1rem;
 
